@@ -21,8 +21,8 @@ fastCheckbox.addEventListener("input", (e) => {
 
 window.addEventListener("load", () => {
   document.addEventListener("keydown", keyPush);
-  document.addEventListener("touchstart", handleTouchStart);
-  document.addEventListener("touchmove", handleTouchMove);
+  canvas.addEventListener("touchstart", handleTouchStart);
+  canvas.addEventListener("touchmove", handleTouchMove);
   gameId = setInterval(game, 1000 / speed);
 });
 
@@ -116,6 +116,7 @@ function keyPush(e) {
 }
 
 function handleTouchStart(e) {
+  e.preventDefault();
   if (!e.touches?.[0]) return;
   const { clientX, clientY } = e.touches[0];
   xDown = clientX;
