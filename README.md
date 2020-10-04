@@ -10,3 +10,4 @@ It's not meant to be a tutorial, but it was fun.
 Extras
 
 - Added a speed toggle
+- Added touch gestures for mobile

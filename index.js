@@ -6,6 +6,8 @@ const SPEEDS = {
 let gameId;
 let speed = SPEEDS.NORMAL;
 
+let xDown = (yDown = null);
+
 const canvas = document.getElementById("gc");
 const ctx = canvas.getContext("2d");
 const fastCheckbox = document.getElementById("fastCheckbox");
@@ -19,6 +21,8 @@ fastCheckbox.addEventListener("input", (e) => {
 
 window.addEventListener("load", () => {
   document.addEventListener("keydown", keyPush);
+  document.addEventListener("touchstart", handleTouchStart);
+  document.addEventListener("touchmove", handleTouchMove);
   gameId = setInterval(game, 1000 / speed);
 });
 
@@ -28,7 +32,7 @@ const trail = [];
 let tail = 5;
 
 // grid size and tile count
-let gs = (tc = 30);
+let gs = (tc = 20);
 
 // apple
 let ax = (ay = 15);
@@ -108,5 +112,41 @@ function keyPush(e) {
       break;
     default:
       break;
+  }
+}
+
+function handleTouchStart(e) {
+  if (!e.touches?.[0]) return;
+  const { clientX, clientY } = e.touches[0];
+  xDown = clientX;
+  yDown = clientY;
+}
+
+function handleTouchMove(e) {
+  if (!xDown || !yDown || !e.touches?.[0]) return;
+
+  const xDiff = xDown - e.touches[0].clientX;
+  const yDiff = yDown - e.touches[0].clientY;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      // left swipe
+      xv = -1;
+      yv = 0;
+    } else {
+      // right swipe
+      xv = 1;
+      yv = 0;
+    }
+  } else {
+    if (yDiff > 0) {
+      // up swipe
+      xv = 0;
+      yv = -1;
+    } else {
+      // down swipe
+      xv = 0;
+      yv = 1;
+    }
   }
 }

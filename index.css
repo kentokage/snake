@@ -6,10 +6,17 @@ body {
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
   flex-direction: column;
+  color: white;
+  background-color: black;
 }
 
 .form {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+#gc {
+  border: 1px solid white;
+  margin: 1rem;
 }
