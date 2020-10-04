@@ -44,22 +44,22 @@ function game() {
   px += xv;
   py += yv;
 
-  // wrapping
-  if (px < 0) {
-    px = tc - 1;
-  }
+  // turned off wrapping
+  // if (px < 0) {
+  //   px = tc - 1;
+  // }
 
-  if (px > tc - 1) {
-    px = 0;
-  }
+  // if (px > tc - 1) {
+  //   px = 0;
+  // }
 
-  if (py < 0) {
-    py = tc - 1;
-  }
+  // if (py < 0) {
+  //   py = tc - 1;
+  // }
 
-  if (py > tc - 1) {
-    py = 0;
-  }
+  // if (py > tc - 1) {
+  //   py = 0;
+  // }
 
   ctx.fillStyle = "black";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
