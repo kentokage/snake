@@ -24,6 +24,8 @@ a:visited {
   flex-direction: column;
   align-items: center;
   position: fixed;
+  left: 50%;
+  margin-left: -450px;
 }
 
 @media screen and (max-device-width: 768px) {
@@ -42,14 +44,17 @@ a:visited {
 
 }
 
-.options {
+.details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 2rem;
 }
 
+.details>* {
+  margin-bottom: .25rem;
+}
+
 #gc {
   border: 1px solid white;
-  margin: 1rem;
 }
