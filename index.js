@@ -32,7 +32,7 @@ const trail = [];
 let tail = 5;
 
 // grid size and tile count
-let gs = (tc = 20);
+let gs = (tc = 30);
 
 // apple
 let ax = (ay = 15);
