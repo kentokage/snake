@@ -123,6 +123,7 @@ function handleTouchStart(e) {
 }
 
 function handleTouchMove(e) {
+  e.preventDefault();
   if (!xDown || !yDown || !e.touches?.[0]) return;
 
   const xDiff = xDown - e.touches[0].clientX;
