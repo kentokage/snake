@@ -3,7 +3,7 @@ https://www.youtube.com/watch?v=xGmXxpIj6vs
 
 Demo:
 
-https://knyto2.github.io/snake/
+https://kennycto.github.io/snake/
 
 It's not meant to be a tutorial, but it was fun.
 
